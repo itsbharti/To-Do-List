@@ -17,6 +17,11 @@ function CreateTaskPopup({modal, toggle , save}) {
     }
 
     const handleSave = () => {
+        if (!taskName.trim()) {
+            alert("Oops! Please name your task!");
+            return;
+        }
+
         let taskObj = {}
         taskObj["Name"] = taskName
         taskObj["Description"] = description
